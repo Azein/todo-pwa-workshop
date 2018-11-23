@@ -1,5 +1,11 @@
 var CACHE_NAME = "my-site-cache-v1";
-var urlsToCache = ["/", "/styles/main.css", "/script/main.js"];
+var urlsToCache = [
+  "/",
+  "/styles.css",
+  "/script.js",
+  "/img/feather-sprite.svg",
+  "register-sw.js"
+];
 
 self.addEventListener("install", function(event) {
   // Perform install steps
