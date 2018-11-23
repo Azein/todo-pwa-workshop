@@ -1,6 +1,9 @@
 importScripts("/lib/idb-keyval-iife.min.js");
 
 var CACHE_NAME = "my-site-cache-v2";
+const SERVER_URL =
+  "https://www.jsonstore.io/12f7f255efc357bed42e794ed1ee252c3c66a28fdde99d1071125cdbdc79595a";
+
 var urlsToCache = [
   "/",
   "/styles.css",
