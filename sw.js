@@ -4,7 +4,7 @@ var urlsToCache = [
   "/styles.css",
   "/script.js",
   "/img/feather-sprite.svg",
-  "/icons/aperture.svg",
+  "/icons/favicon.png",
   "register-sw.js",
   "https://unpkg.com/react@16/umd/react.development.js",
   "https://unpkg.com/react-dom@16/umd/react-dom.development.js",
