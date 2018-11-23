@@ -19,12 +19,14 @@ var urlsToCache = [
 ];
 
 self.addEventListener("install", function(event) {
-  // Perform install steps
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      console.log("Opened cache");
-      return cache.addAll(urlsToCache);
-    })
+    caches
+      .open(CACHE_NAME)
+      .then(function(cache) {
+        console.log("Opened cache");
+        return cache.addAll(urlsToCache);
+      })
+      .catch(console.error)
   );
 });
 
@@ -61,6 +63,16 @@ self.addEventListener("sync", function(event) {
       })
     );
   }
+});
+
+// push notification
+self.addEventListener("push", function(e) {
+  let body = e.data ? e.data.text() : "Push message no payload";
+  let options = {
+    body: body,
+    icon: "favicon.png"
+  };
+  e.waitUntil(self.registration.showNotification("Push Notification", options));
 });
 
 // deletes old caches
